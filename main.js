@@ -30,7 +30,7 @@ $(document).ready(function ($) {
         request.always(function () {
 			$('#name, #checkbox, #option').prop("disabled", true);
         });
-		alert("申請完成!!");
+		alert("提交完成!!注意!!務必等到表單重置後才算成功");
         event.preventDefault();
     })
 })
