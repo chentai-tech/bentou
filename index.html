@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全泰科技便當申請表單系統</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-8 mx-auto">
+                <h1 class="mb-5 text-center">全泰科技<br>便當申請表單系統</h1>
+                <form action="post" id="google-sheet">
+                    <!--<div class="mb-3">
+                        <label for="Date" class="form-label">預約日期</label>
+                        <input type="Date" class="form-control" id="date" placeholder="預約日期" name="Date" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Time" class="form-label">預約時間</label>
+                        <select class="form-control" name="Time" id="time" required>
+                            <option value="">請選擇</option>
+                            <option value="10:00~11:00">10:00~11:00</option>
+                            <option value="11:00~12:00">11:00~12:00</option>
+                            <option value="13:00~14:00">13:00~14:00</option>
+                            <option value="14:00~15:00">14:00~15:00</option>
+                        </select>
+                    </div>-->
+					<script>
+						function visitPage() {
+							window.location='https://script.google.com/macros/s/AKfycbzgR50S9X2OA9p4QsjvZu2WQ6rE8lUR3CCEhPAckEnyAm5__pC0Bej8EIDdnMwEb9Ah_A/exec';
+						}
+					</script>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">姓名</label>
+                        <input type="text" class="form-control" id="name" placeholder="您的姓名" name="Name" required>
+                    </div>
+					 <div class="mb-3 d-block">
+						<label for="checkbox">是否加飯</label>
+						<input type="checkbox" id="checkbox">
+						<br>
+                        <label for="Phone" class="form-label">加飯</label>
+                        <input type="radio" id="option1" name="option" value="1" checked disabled>
+						
+						<label for="Date" class="form-label">只加飯</label>
+                        <input type="radio" id="option2" name="option" value="2" disabled>
+                    </div>
+                    <div class="mb-3 d-block">
+                        <input type="submit" class="btn btn-primary btn-lg w-100 mt-5" value="送出表單" />
+                    </div>
+					<div class="mb-3 d-block">
+                        <input type="button" class="btn btn-primary btn-lg w-100 mt-5" value="檢視列表" onclick="visitPage();" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
+    <script src="main.js"></script>
+	<script>
+	  // 获取核取方塊和选项按钮的引用
+	  const checkbox = document.getElementById('checkbox');
+	  const option1 = document.getElementById('option1');
+	  const option2 = document.getElementById('option2');
+
+	  // 当核取方塊状态改变时执行的函数
+	  function toggleOptions() {
+		// 如果核取方塊被选中
+		if (checkbox.checked) {
+		  // 启用选项按钮
+		  option1.disabled = false;
+		  option2.disabled = false;
+		} else {
+		  // 禁用选项按钮
+		  option1.disabled = true;
+		  option2.disabled = true;
+		}
+	  }
+
+	  // 将 toggleOptions 函数绑定到核取方塊的 change 事件上
+	  checkbox.addEventListener('change', toggleOptions);
+	</script>
+</body>
+</html>
