@@ -1,4 +1,4 @@
-var script_url = "https://script.google.com/macros/s/AKfycbz3f7tCOzcTlDugLh-QTIuqpIVlEsqzj6GhRxjCnYIDfzNTxJSZP5l7vguSqEQYVdIu5Q/exec";
+var script_url = "https://script.google.com/macros/s/AKfycbwxcwGysIMQ7tq1pxnAJ3buvqZ5CCieiTjgqq-y-dnOpf44K54OKQGvVAqmTgUrTwVN7w/exec";
 $(document).ready(function ($) {
     $("#google-sheet").submit(function (event) {
         //$('#date, #time, #name, #option').prop("disabled", false);
