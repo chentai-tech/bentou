@@ -1,2 +1,2 @@
 # bentou
-this is an online book form for https://img.shields.io/badge/Chentai-Tech-success
+this is an online book form for <img src="https://img.shields.io/badge/Chentai-Tech-success" Alt="CT">
