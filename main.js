@@ -14,9 +14,13 @@ $(document).ready(function ($) {
 		} */
         if ($('#checkbox').is(':checked')) {
 			if ($('#option1').is(':checked')) { 
-				phone = $('#option1').val(); 
+				phone = $('#option1').val();
+			} else if ($('#option2').is(':checked')) {
+				phone = $('#option2').val();
+			} else if ($('#option3').is(':checked')) {
+				phone = $('#option3').val();
 			} else {
-				phone = $('#option2').val(); 
+				phone = $('#option4').val();
 			}
 		}
 		var url = script_url + "?callback=ctrlq&name=" + name + "&phone=" + phone + "&action=create";
