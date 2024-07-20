@@ -97,6 +97,27 @@
 
 	  // 将 toggleOptions 函数绑定到核取方塊的 change 事件上
 	  checkbox.addEventListener('change', toggleOptions);
+
+      const button = document.getElementById('btnSubmit');
+
+        function checkButtonStatus() {
+            const now = Date.now();
+            const startTime = Date.parse('06:00:00');
+            const endTime = Date.parse('10:00:00');
+            button.disabled = !(now >= startTime && now <= endTime);
+            
+            // if (isInRange) {
+            //     button.disabled = false;
+            // } else {
+            //     button.disabled = true;
+            // }
+        }
+
+        // 在頁面載入時檢查按鈕狀態
+        checkButtonStatus();
+
+        // 每隔 1 秒檢查按鈕狀態
+        setInterval(checkButtonStatus, 1000);
 	</script>
 </body>
 </html>

@@ -1,27 +1,5 @@
 var script_url = "https://script.google.com/macros/s/AKfycbzMA0bD12KisWPsijBwhDqH3ev0ozmhB98ZkJDlutf6e_aT1Ciu1eoG2mdc6nyKT_KtDg/exec";
 $(document).ready(function ($) {
-	const button = $('#btnSubmit');
-
-	function checkButtonStatus() {
-		const today = new Date();
-		var nowHour = today.getHours();
-		const startHour = 6;
-		const endHour = 10;
-		const isInRange = nowHour >= startHour && nowHour <= endHour;
-	
-		if (isInRange) {
-		button.prop('disabled', true);
-		} else {
-		button.prop('disabled', false);
-		}
-	}
-	
-	// Check button status when the page loads
-	checkButtonStatus();
-	
-	// Check button status every second
-	setInterval(checkButtonStatus, 1000);
-
     $("#google-sheet").submit(function (event) {
 		$('#name, #checkbox, #option').prop("disabled", false);
         var name = $("#name").val();
