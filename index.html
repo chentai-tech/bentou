@@ -105,10 +105,15 @@
         const isInRange = now >= startTime && now <= endTime;
 
         if (isInRange) {
-            button.disabled = true;
-        } else {
             button.disabled = false;
+        } else {
+            button.disabled = true;
         }
+        // Check button status when the page loads
+        checkButtonStatus();
+
+        // Check button status every second
+        setInterval(checkButtonStatus, 1000);
 	</script>
 </body>
 </html>
