@@ -58,7 +58,7 @@
 						<label for="option4">不要飯</label>
                     </div>
                     <div class="mb-3 d-block">
-                        <input type="submit" class="btn btn-primary btn-lg w-100 mt-5" value="送出表單" />
+                        <input type="submit" class="btn btn-primary btn-lg w-100 mt-5" id="btnSubmit" value="送出表單" />
                     </div>
 					<div class="mb-3 d-block">
                         <input type="button" class="btn btn-primary btn-lg w-100 mt-5" value="檢視列表" onclick="visitPage();" />
@@ -76,6 +76,7 @@
 	  const option2 = document.getElementById('option2');
       const option3 = document.getElementById('option3');
       const option4 = document.getElementById('option4');
+      const button = document.getElementById('btnSubmit');
 
 	  // 当核取方塊状态改变时执行的函数
 	  function toggleOptions() {
@@ -97,6 +98,17 @@
 
 	  // 将 toggleOptions 函数绑定到核取方塊的 change 事件上
 	  checkbox.addEventListener('change', toggleOptions);
+
+        const now = Date.now();
+        const startTime = Date.parse('06:00:00');
+        const endTime = Date.parse('10:00:00');
+        const isInRange = now >= startTime && now <= endTime;
+
+        if (isInRange) {
+            button.disabled = true;
+        } else {
+            button.disabled = false;
+        }
 	</script>
 </body>
 </html>

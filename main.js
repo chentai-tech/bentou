@@ -1,17 +1,10 @@
 var script_url = "https://script.google.com/macros/s/AKfycbzMA0bD12KisWPsijBwhDqH3ev0ozmhB98ZkJDlutf6e_aT1Ciu1eoG2mdc6nyKT_KtDg/exec";
 $(document).ready(function ($) {
     $("#google-sheet").submit(function (event) {
-        //$('#date, #time, #name, #option').prop("disabled", false);
 		$('#name, #checkbox, #option').prop("disabled", false);
         var name = $("#name").val();
 		var phone = "";
-		/* if ($('#checkbox').is(':checked')) {
-			if ($('#option1').is(':checked')) {
-				phone = "1";
-			} else {
-				time = "1";
-			}
-		} */
+
         if ($('#checkbox').is(':checked')) {
 			if ($('#option1').is(':checked')) { 
 				phone = $('#option1').val();
