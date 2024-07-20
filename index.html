@@ -104,7 +104,7 @@
             const now = Date.now();
             const startTime = Date.parse('06:00:00');
             const endTime = Date.parse('10:00:00');
-            button.disabled = !(now >= startTime && now <= endTime);
+            button.disabled = (now <= endTime);
             
             // if (isInRange) {
             //     button.disabled = false;
