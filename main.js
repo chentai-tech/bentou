@@ -29,5 +29,26 @@ $(document).ready(function ($) {
         });
 		alert("提交完成!!注意!!務必等到表單重置後才算成功");
         event.preventDefault();
+
+		const button = $('#btnSubmit');
+
+		function checkButtonStatus() {
+		  const now = Date.now();
+		  const startTime = Date.parse('06:00:00');
+		  const endTime = Date.parse('10:00:00');
+		  const isInRange = now >= startTime && now <= endTime;
+	  
+		  if (isInRange) {
+			button.prop('disabled', true);
+		  } else {
+			button.prop('disabled', false);
+		  }
+		}
+	  
+		// Check button status when the page loads
+		checkButtonStatus();
+	  
+		// Check button status every second
+		setInterval(checkButtonStatus, 1000);
     })
 })

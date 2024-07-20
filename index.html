@@ -76,7 +76,6 @@
 	  const option2 = document.getElementById('option2');
       const option3 = document.getElementById('option3');
       const option4 = document.getElementById('option4');
-      const button = document.getElementById('btnSubmit');
 
 	  // 当核取方塊状态改变时执行的函数
 	  function toggleOptions() {
@@ -98,22 +97,6 @@
 
 	  // 将 toggleOptions 函数绑定到核取方塊的 change 事件上
 	  checkbox.addEventListener('change', toggleOptions);
-
-        const now = Date.now();
-        const startTime = Date.parse('06:00:00');
-        const endTime = Date.parse('10:00:00');
-        const isInRange = now >= startTime && now <= endTime;
-
-        if (isInRange) {
-            button.disabled = false;
-        } else {
-            button.disabled = true;
-        }
-        // Check button status when the page loads
-        checkButtonStatus();
-
-        // Check button status every second
-        setInterval(checkButtonStatus, 1000);
 	</script>
 </body>
 </html>
