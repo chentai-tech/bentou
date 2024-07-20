@@ -3,7 +3,8 @@ $(document).ready(function ($) {
 	const button = $('#btnSubmit');
 
 	function checkButtonStatus() {
-		const nowHour = Date.now().getHours();
+		const today = new Date();
+		var nowHour = today.getHours();
 		const startHour = 6;
 		const endHour = 10;
 		const isInRange = nowHour >= startHour && nowHour <= endHour;
