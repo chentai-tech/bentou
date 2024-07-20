@@ -3,10 +3,10 @@ $(document).ready(function ($) {
 	const button = $('#btnSubmit');
 
 	function checkButtonStatus() {
-		const now = Date.now();
-		const startTime = Date.parse('06:00:00');
-		const endTime = Date.parse('10:00:00');
-		const isInRange = now >= startTime && now <= endTime;
+		const nowHour = Date.now().getHours();
+		const startHour = 6;
+		const endHour = 10;
+		const isInRange = nowHour >= startHour && nowHour <= endHour;
 	
 		if (isInRange) {
 		button.prop('disabled', true);
@@ -20,7 +20,7 @@ $(document).ready(function ($) {
 	
 	// Check button status every second
 	setInterval(checkButtonStatus, 1000);
-	
+
     $("#google-sheet").submit(function (event) {
 		$('#name, #checkbox, #option').prop("disabled", false);
         var name = $("#name").val();
