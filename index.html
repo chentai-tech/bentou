@@ -101,23 +101,19 @@
       const button = document.getElementById('btnSubmit');
 
         function checkButtonStatus() {
-            const now = Date.now();
-            const startTime = Date.parse('06:00:00');
-            const endTime = Date.parse('10:00:00');
-            button.disabled = (now <= endTime);
+            const now = new Date();
+            var hour = now.getHours();
+            const startTime = 6;
+            const endTime = 10;
             
-            // if (isInRange) {
-            //     button.disabled = false;
-            // } else {
-            //     button.disabled = true;
-            // }
+            button.disabled = !(startTime <= hour && hour < endTime);
         }
 
         // 在頁面載入時檢查按鈕狀態
         checkButtonStatus();
 
         // 每隔 1 秒檢查按鈕狀態
-        setInterval(checkButtonStatus, 1000);
+        //setInterval(checkButtonStatus, 1000);
 	</script>
 </body>
 </html>
