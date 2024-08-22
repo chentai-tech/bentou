@@ -21,20 +21,6 @@
             <div class="col-8 mx-auto">
                 <h1 class="mb-5 text-center">全泰科技<br>便當申請表單系統</h1>
                 <form action="post" id="google-sheet">
-                    <!--<div class="mb-3">
-                        <label for="Date" class="form-label">預約日期</label>
-                        <input type="Date" class="form-control" id="date" placeholder="預約日期" name="Date" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="Time" class="form-label">預約時間</label>
-                        <select class="form-control" name="Time" id="time" required>
-                            <option value="">請選擇</option>
-                            <option value="10:00~11:00">10:00~11:00</option>
-                            <option value="11:00~12:00">11:00~12:00</option>
-                            <option value="13:00~14:00">13:00~14:00</option>
-                            <option value="14:00~15:00">14:00~15:00</option>
-                        </select>
-                    </div>-->
 					<script>
 						function visitPage() {
 							window.location='https://chentai-tech.github.io/bentou/data.html';
@@ -44,19 +30,13 @@
                         <label for="Name" class="form-label">姓名</label>
                         <input type="text" class="form-control" id="name" placeholder="您的姓名" name="Name" required>
                     </div>
-					 <div class="mb-3 d-block">
-						<label for="checkbox">額外選項</label>
-						<input type="checkbox" id="checkbox">
-						<hr>
-                        <input type="radio" id="option1" name="option" value="1" checked disabled>
-						<label for="option1">加飯</label>
-                        <input type="radio" id="option2" name="option" value="2" disabled>
-						<label for="option2">只加飯</label>
-                        <input type="radio" id="option3" name="option" value="3" disabled>
-						<label for="option3">少飯</label>
-                        <input type="radio" id="option4" name="option" value="4" disabled>
-						<label for="option4">不要飯</label>
-                    </div>
+                    <select class="option-select form-control" aria-label="Large select example">
+                        <option selected value="">額外選項</option>
+                        <option id="option1" name="option" value="1">加飯</option>
+                        <option id="option2" name="option" value="2">只加飯</option>
+                        <option id="option3" name="option" value="3">少飯</option>
+                        <option id="option4" name="option" value="4">不要飯</option>
+                    </select>
                     <div class="mb-3 d-block">
                         <input type="submit" class="btn btn-primary btn-lg w-100 mt-5" id="btnSubmit" value="送出表單" />
                     </div>
@@ -70,33 +50,6 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
     <script src="main.js"></script>
 	<script>
-	  // 获取核取方塊和选项按钮的引用
-	  const checkbox = document.getElementById('checkbox');
-	  const option1 = document.getElementById('option1');
-	  const option2 = document.getElementById('option2');
-      const option3 = document.getElementById('option3');
-      const option4 = document.getElementById('option4');
-
-	  // 当核取方塊状态改变时执行的函数
-	  function toggleOptions() {
-		// 如果核取方塊被选中
-		if (checkbox.checked) {
-		  // 启用选项按钮
-		  option1.disabled = false;
-		  option2.disabled = false;
-          option3.disabled = false;
-          option4.disabled = false;
-		} else {
-		  // 禁用选项按钮
-		  option1.disabled = true;
-		  option2.disabled = true;
-          option3.disabled = true;
-          option4.disabled = true;
-		}
-	  }
-
-	  // 将 toggleOptions 函数绑定到核取方塊的 change 事件上
-	  checkbox.addEventListener('change', toggleOptions);
 
       const button = document.getElementById('btnSubmit');
 
